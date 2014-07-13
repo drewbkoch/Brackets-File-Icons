@@ -8,14 +8,16 @@
 .file-icon {
 	font-family: "icomoon";
 	text-align: center;
-	font-size: 16px;
-	width: 20px;
+	font-size: 14px;
+	width: 28px;
 	text-shadow: none;
+	vertical-align: middle;
+	color: #94a3a7;
 }
 
 #open-files-container .file-icon {
 	display: inline-block;
-	width: 20px;
+	width: 28px;
 	padding-top: 2px;
 }
 
