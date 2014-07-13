@@ -1,4 +1,4 @@
-Brackets Icons
+Brackets File Icons
 ==============
 This extension adds file icons to the brackets file tree. 
 This is a fork of ivogabe's' [Brackets-Icons](https://github.com/ivogabe/Brackets-Icons) extension
