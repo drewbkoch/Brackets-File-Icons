@@ -38,14 +38,14 @@ define(function(require, exports, module) {
 
 	// XML
 	addIcon('xml',    '\uf271', '#ff6600');
-	addIcon('html',   '\uf271', '#E34C26');
+	addIcon('html',   '\uf13b', '#E34C26');
 
 	// Stylesheets
-	addIcon('css',    '\uf219', '#0270b9', 12);
-	addIcon('scss',   '\uf219', '#c6538c', 12);
+	addIcon('css',    '\uf26a', '#0270b9', 12);
+	addIcon('scss',   '\uf26a', '#c6538c', 12);
 	addAlias('sass',  'scss');
-	addIcon('less',   '\uf219', '#2b5086', 12);
-	addIcon('styl',   '\uf219', '#b3d107', 12);
+	addIcon('less',   '\uf26a', '#2b5086', 12);
+	addIcon('styl',   '\uf26a', '#b3d107', 12);
 
 	// JavaScript
 	addIcon('js',     '\uf2db', '#e5a228', 12);
@@ -94,7 +94,7 @@ define(function(require, exports, module) {
 	addIcon('woff',    '\uf241', '#7f4bb2');
 
 	// Readme
-	addIcon('md',     /*'\uf12e'*/ '\uf2d0', '#b94700', 12);
+	addIcon('md', '\uf0c9', '#b94700');
 	addAlias('markdown', 'md');
 
 	// Git
