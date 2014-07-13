@@ -1,7 +1,7 @@
 Brackets Icons
 ==============
-This extension adds file icons (from the [Ionicons](https://github.com/driftyco/ionicons) project) to the brackets file tree. 
-![Brackets Icons](https://raw.githubusercontent.com/ivogabe/Brackets-Icons/master/screenshots/screenshot-1.png)
+This extension adds file icons to the brackets file tree. 
+This is a fork of ivogabe's' [Brackets-Icons](https://github.com/ivogabe/Brackets-Icons) extension
 
 Supported files
 ---------------
@@ -35,12 +35,10 @@ The following files are supported at the moment:
  - Project, Jscsrc, Jshintrc, Csslintrc, Todo, Classpath
  - Zip, Rar, 7z, Tgz, Tar, Gz, Bzip
 
-You can request more file formats by creating an issue. Choose the icon [here](http://ionicons.com) and add a color (in hex format) to the issue.
-
 How to install
 --------------
-Open Brackets, and click the extensions button on the right. Search for 'Brackets Icons' and click install.
+Open Brackets, and click the extensions button on the right. Search for 'Brackets File Icons' and click install.
 
 License
 -------
-Brackets Icons is licensed under the [MIT license](http://opensource.org/licenses/MIT). Ionicons is also licensed under the MIT license.
+Brackets File Icons is licensed under the [MIT license](http://opensource.org/licenses/MIT).
