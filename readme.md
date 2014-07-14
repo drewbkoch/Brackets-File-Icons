@@ -5,8 +5,8 @@ Thanks to [ivogabe](https://github.com/ivogabe) for his groundwork on this proje
 
 Screenshots
 --------------
-![Screenshot](https://raw.githubusercontent.com/drewbkoch/brackets-file-cons/master/screenshots/screenshot-2.png)
-![Screenshot](https://raw.githubusercontent.com/drewbkoch/brackets-file-cons/master/screenshots/screenshot-1.png)
+![Screenshot](https://raw.githubusercontent.com/drewbkoch/Brackets-File-Icons/master/screenshots/screenshot1.jpg)
+![Screenshot](https://raw.githubusercontent.com/drewbkoch/Brackets-File-Icons/master/screenshots/screenshot2.jpg)
 
 Supported files
 ---------------
