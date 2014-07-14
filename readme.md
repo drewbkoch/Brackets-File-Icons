@@ -1,7 +1,7 @@
 Brackets File Icons
 ==============
 This extension adds file icons to the brackets file tree. 
-This is a fork of ivogabe's' [Brackets-Icons](https://github.com/ivogabe/Brackets-Icons) extension
+Thanks to [ivogabe](https://github.com/ivogabe) for his groundwork on this project. Original project repo here: [Brackets-Icons](https://github.com/ivogabe/Brackets-Icons)
 
 Supported files
 ---------------
@@ -41,4 +41,10 @@ Open Brackets, and click the extensions button on the right. Search for 'Bracket
 
 License
 -------
-Brackets File Icons is licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Brackets File Icons is licensed under the [MIT license](http://opensource.org/licenses/MIT). The original Brackets Icons is also licensed under the MIT license.
+
+Font Awesome icons by Dave Gandy - http://fontawesome.io
+
+Octicons icons by Github - http://github.com
+
+Pictonic icons by Pictonic - http://pictonic.co
