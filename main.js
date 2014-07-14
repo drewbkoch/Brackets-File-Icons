@@ -38,14 +38,14 @@ define(function(require, exports, module) {
 
 	// XML
 	addIcon('xml',    '\uf05f', '#ff6600');
-	addIcon('html',   '\uf13b', '#d28445', 14);
+	addIcon('html',   '\uf13b', '#d28445');
 
 	// Stylesheets
-	addIcon('css',    '\uf13c', '#6a9fb5', 14);
-	addIcon('scss',   '\uf13c', '#c6538c', 14);
+	addIcon('css',    '\uf13c', '#6a9fb5');
+	addIcon('scss',   '\uf13c', '#c6538c');
 	addAlias('sass',  'scss');
-	addIcon('less',   '\uf13c', '#3b6bb2', 14);
-	addIcon('styl',   '\uf13c', '#b3d107', 14);
+	addIcon('less',   '\uf13c', '#3b6bb2');
+	addIcon('styl',   '\uf13c', '#b3d107');
 
 	// JavaScript
 	addIcon('js',     '\uf05f', '#f4bf75');
@@ -55,7 +55,7 @@ define(function(require, exports, module) {
 	addIcon('ls',     '\uf269', '#369bd7');
 
 	// Server side
-	addIcon('php',    '\ue09a', '#6976c3', 16);
+	addIcon('php',    '\ue09a', '#6976c3');
 	addIcon('sql',    '\uf096', '#c67f07');
 
 	// Java
