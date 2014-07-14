@@ -3,6 +3,11 @@ Brackets File Icons
 This extension adds file icons to the brackets file tree. 
 Thanks to [ivogabe](https://github.com/ivogabe) for his groundwork on this project. Original project repo here: [Brackets-Icons](https://github.com/ivogabe/Brackets-Icons)
 
+Screenshots
+--------------
+![Screenshot](https://raw.githubusercontent.com/drewbkoch/brackets-file-cons/master/screenshots/screenshot-2.png)
+![Screenshot](https://raw.githubusercontent.com/drewbkoch/brackets-file-cons/master/screenshots/screenshot-1.png)
+
 Supported files
 ---------------
 The following files are supported at the moment:
