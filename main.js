@@ -65,6 +65,7 @@ define(function(require, exports, module) {
 	// Shell and friends
 	addIcon('sh',     '\ue0b7');
 	addIcon('bat',    '\ue0b7');
+	addIcon('command','\ue0b7');
 
 	// Templating
 	addIcon('jade',   '\uf13b', '#01dfa5');
