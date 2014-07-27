@@ -49,7 +49,8 @@ define(function(require, exports, module) {
 	addIcon('styl',   '\uf13c', '#b3d107');
 
 	// JavaScript
-	addIcon('js',     '\uf05f', '#f4bf75');
+	addIcon('js',     '\ue097', '#f4bf75');
+	addIcon('ejs',     '\uf05f', '#f4bf75');
 	addIcon('ts',     '\uf05f', '#0074c1');
 	addIcon('coffee', '\ue0b3', '#c9905e');
 	addIcon('json',   '\uf096', '#F4BF75');
@@ -101,7 +102,8 @@ define(function(require, exports, module) {
 
 	// Git
 	addIcon('gitignore', '\uf084', '#a0422e', 18);
-	addIcon('gitmodules', '\uf020', '#a0422e');
+	addIcon('gitmodules', '\uf020');
+	addIcon('gitattributes', '\uf020');
 
 	// Webservers
 	addIcon('htaccess', '\uf02f');
@@ -131,6 +133,7 @@ define(function(require, exports, module) {
 	addIcon('npmignore', '\uf084', '#a0422e', 18);
 	addIcon('yml',   '\uf011');
 	addIcon('ls', '\uf011');
+	addIcon('org', '\uf011');
 
 	var ProjectManager = brackets.getModule('project/ProjectManager');
 	var DocumentManager = brackets.getModule('document/DocumentManager');

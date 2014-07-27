@@ -9,6 +9,15 @@ Screenshots
 
 Supported files
 ---------------
+
+7/27/14 - New files supported!
+
+- HTM
+- EJS
+- COMMAND
+- GitAttributes
+- ORG (editorconfig.org)
+
 The following files are supported at the moment:
 
  - JavaScript
