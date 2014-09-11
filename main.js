@@ -152,14 +152,14 @@ define(function(require, exports, module) {
 	
 		var ext = FileUtils.getSmartFileExtension(entry.name);
 		data = fileInfo.hasOwnProperty(ext) ? fileInfo[ext] : getDefaultIcon(ext);
-		var ins = React.DOM.ins({
-			className: "jstree-icon file-icon", 
-			style: {
-				color: data.color,
-				fontSize: (data.size || 16) + 'px'
-			}
-		}, data.icon);
-		return ins;
+      var $new = $('<ins>');
+      $new.text(data.icon);
+      $new.addClass('jstree-icon file-icon');
+      $new.css({
+          color: data.color,
+          fontSize: (data.size || 16) + 'px'
+      });
+		return $new;
  	});
 
 	function renderWorkingSet() {
