@@ -1,4 +1,5 @@
 define(function(require, exports, module) {
+
 	var fileInfo = {};
 
 	function addIcon(extension, icon, color, size) {
@@ -39,7 +40,7 @@ define(function(require, exports, module) {
 	// XML
 	addIcon('xml',    '\uf05f', '#ff6600');
 	addIcon('html',   '\uf13b', '#d28445');
-    	addAlias('htm',   'html');
+		addAlias('htm',   'html');
 
 	// Stylesheets
 	addIcon('css',    '\uf13c', '#6a9fb5');
@@ -138,38 +139,29 @@ define(function(require, exports, module) {
 	var ProjectManager = brackets.getModule('project/ProjectManager');
 	var DocumentManager = brackets.getModule('document/DocumentManager');
 	var ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
+  var React = brackets.getModule("thirdparty/react"),
+	  FileTreeView = brackets.getModule("project/FileTreeView"),
+	  FileUtils = brackets.getModule("file/FileUtils");
 
 	ExtensionUtils.loadStyleSheet(module, "styles/style.css");
 
-	function renderFiles() {
-		$('#project-files-container ul').removeClass('jstree-no-icons').addClass('jstree-icons');
+	FileTreeView.addIconProvider(function (entry) {
+		if (!entry.isFile) {
+			return;
+		}
 
-		var $items = $('#project-files-container li>a');
+		var ext = FileUtils.getSmartFileExtension(entry.name);
+		data = fileInfo.hasOwnProperty(ext) ? fileInfo[ext] : getDefaultIcon(ext);
+      var $new = $('<ins>');
+      $new.text(data.icon);
+      $new.addClass('jstree-icon file-icon');
+      $new.css({
+          color: data.color,
+          fontSize: (data.size || 16) + 'px'
+      });
+		return $new;
+ 	});
 
-		$items.each(function(index) {
-			var ext = ($(this).find('.extension').text() || $(this).text().substr(1) || '').substr(1).toLowerCase();
-			var lastIndex = ext.lastIndexOf('.');
-			if (lastIndex > 0) {
-				ext = ext.substr(lastIndex + 1);
-			}
-            
-			var data;
-
-			if ($(this).parent().hasClass('jstree-leaf')) {
-				data = fileInfo.hasOwnProperty(ext) ? fileInfo[ext] : getDefaultIcon(ext);
-			} else {
-				return;
-			}
-
-			var $new = $(this).find('.jstree-icon');
-			$new.text(data.icon);
-			$new.addClass('file-icon');
-			$new.css({
-				color: data.color,
-				fontSize: (data.size || 16) + 'px'
-			});
-		});
-	}
 	function renderWorkingSet() {
 		$('#open-files-container li>a>.file-icon').remove();
 
@@ -195,21 +187,9 @@ define(function(require, exports, module) {
 		});
 	}
 
-	function projectOpen() {
-		var events = 'load_node.jstree create_node.jstree set_text.jstree';
-
-		renderFiles();
-
-		$('#project-files-container').off(events, renderFiles);
-		$('#project-files-container').on(events, renderFiles);
-	}
-
-	$(ProjectManager).on('projectOpen projectRefresh', projectOpen);
-
 	$(DocumentManager).on("workingSetAdd workingSetAddList workingSetRemove workingSetRemoveList fileNameChange pathDeleted workingSetSort", function() {
 		renderWorkingSet();
 	});
 
-	projectOpen();
 	renderWorkingSet();
 });
