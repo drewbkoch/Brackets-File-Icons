@@ -75,7 +75,7 @@ define(function (require, exports, module) {
 
 	// Templating
 	addIcon('jade', '\uf13b', '#01dfa5');
-    addIcon('dust', '\uf13b', '#d28445');
+	addIcon('dust', '\uf13b', '#d28445');
 
 	// Images
 	addIcon('png', '\uf012', '#dbb1a9');
