@@ -41,6 +41,7 @@ define(function (require, exports, module) {
 
 	// XML
 	addIcon('xml', '\uf05f', '#ff6600');
+	addIcon('plist', '\uf05f', '#5883f9');
 	addIcon('html', '\uf13b', '#d28445');
 	addAlias('htm', 'html');
 
