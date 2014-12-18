@@ -28,11 +28,13 @@ The following files are supported at the moment:
  - HTML
  - SVG
  - XML
+ - plist
  - PHP, SQL
  - Java
  - CSS, SASS, Less, Stylus
  - Shell script, Batch
  - Jade
+ - Dust
  - TXT
  - Log
  - Markdown
