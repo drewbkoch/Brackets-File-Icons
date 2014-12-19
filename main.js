@@ -66,6 +66,11 @@ define(function (require, exports, module) {
 	// Java
 	addIcon('java', '\ue098', '#75b4de');
 	addAlias('class', 'java');
+  
+  // Ruby
+  addIcon('rb', '\ue091', '#a0422e', 16);
+  addAlias('erb',   'rb');
+	addAlias('rdoc',  'rb');
 
 	// Shell and friends
 	addIcon('sh', '\ue0b7');
