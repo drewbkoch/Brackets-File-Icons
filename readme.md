@@ -31,6 +31,7 @@ The following files are supported at the moment:
  - PHP, SQL
  - Java
  - Ruby
+ - Python
  - CSS, SASS, Less, Stylus
  - Shell script, Batch
  - Jade

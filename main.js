@@ -71,6 +71,12 @@ define(function (require, exports, module) {
   addIcon('rb', '\ue091', '#a0422e', 16);
   addAlias('erb',   'rb');
 	addAlias('rdoc',  'rb');
+  
+  // Python
+  addIcon('py', '\ue09e', '#75b4de');
+  addAlias('pyc',  'py');
+	addAlias('pyo',  'py');
+	addAlias('pyd',  'py');
 
 	// Shell and friends
 	addIcon('sh', '\ue0b7');
