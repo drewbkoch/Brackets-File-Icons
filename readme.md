@@ -30,8 +30,6 @@ The following files are supported at the moment:
  - XML
  - PHP, SQL
  - Java
- - Ruby
- - Python
  - CSS, SASS, Less, Stylus
  - Shell script, Batch
  - Jade
