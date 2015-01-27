@@ -155,9 +155,7 @@ define(function (require, exports, module) {
 
 
 	var WorkingSetView = brackets.getModule('project/WorkingSetView');
-	var ProjectManager = brackets.getModule('project/ProjectManager');
 	var ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
-	var React = brackets.getModule("thirdparty/react");
 	var FileTreeView = brackets.getModule("project/FileTreeView");
 	var FileUtils = brackets.getModule("file/FileUtils");
 
@@ -169,8 +167,13 @@ define(function (require, exports, module) {
 			return;
 		}
 
-		var ext = FileUtils.getSmartFileExtension(entry.name);
-		data = fileInfo.hasOwnProperty(ext) ? fileInfo[ext] : getDefaultIcon(ext);
+		var ext = FileUtils.getSmartFileExtension(entry.fullPath) || entry.name.substr(1);
+		if (fileInfo.hasOwnProperty(ext)) {
+			data = fileInfo[ext];
+		} else {
+			data = fileInfo['txt'];
+		}
+      
 		var $new = $('<ins>');
 		$new.text(data.icon);
 		$new.addClass('jstree-icon file-icon');
@@ -180,34 +183,7 @@ define(function (require, exports, module) {
 		});
 		return $new;
 	};
-
-	function renderWorkingSet() {
-		$('#open-files-container li>a>.file-icon').remove();
-
-		var $items = $('#open-files-container li>a');
-
-		$items.each(function (index) {
-			var ext = ($(this).find('.extension').text() || $(this).text() || '').substr(1).toLowerCase();
-			var lastIndex = ext.lastIndexOf('.');
-			if (lastIndex > 0) {
-				ext = ext.substr(lastIndex + 1);
-			}
-
-			var data = fileInfo.hasOwnProperty(ext) ? fileInfo[ext] : getDefaultIcon(ext);
-
-			var $new = $('<div>');
-			$new.text(data.icon);
-			$new.addClass('file-icon');
-			$new.css({
-				color: data.color,
-				fontSize: (data.size || 16) + 'px'
-			});
-			$(this).prepend($new);
-		});
-	}
 	
 	FileTreeView.addIconProvider(provider);
 	WorkingSetView.addIconProvider(provider);
-
-	renderWorkingSet();
 });
