@@ -151,8 +151,6 @@ define(function (require, exports, module) {
 			return;
 		}
 
-		console.log(entry);
-
 		var ext = FileUtils.getSmartFileExtension(entry.fullPath) || entry.name.substr(1);
 		if (fileInfo.hasOwnProperty(ext)) {
 			data = fileInfo[ext];
