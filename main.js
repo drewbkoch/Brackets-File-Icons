@@ -14,31 +14,6 @@ define(function (require, exports, module) {
 		fileInfo[extension] = fileInfo[other];
 	}
 
-	function getDefaultIcon(extension) {
-		if (extension === '') {
-			return {
-				color: '#94a3a7',
-				icon: '\uf011'
-			};
-		}
-
-		var hue = 0;
-		var saturnation = 90;
-		var lightness = 50;
-
-		for (var i = 0; i < extension.length; ++i) {
-			hue += extension.charCodeAt(i) * 42 * (i + 2);
-			hue %= 256;
-			saturnation = (saturnation + (extension.charCodeAt(i) % 30) + 70) / 2;
-			lightness = (lightness + (extension.charCodeAt(i) * 3 % 40) + 30) / 2;
-		}
-
-		return {
-			color: 'hsl(' + Math.round(hue) + ', ' + Math.round(saturnation) + '%, ' + Math.round(lightness) + '%)',
-			icon: '\uf12f'
-		};
-	}
-
 	// XML
 	addIcon('xml', '\uf05f', '#ff6600');
 	addIcon('html', '\uf13b', '#d28445');
@@ -140,22 +115,23 @@ define(function (require, exports, module) {
 
 
 	var WorkingSetView = brackets.getModule('project/WorkingSetView');
-	var ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
-	var FileTreeView = brackets.getModule("project/FileTreeView");
-	var FileUtils = brackets.getModule("file/FileUtils");
+	var ExtensionUtils = brackets.getModule('utils/ExtensionUtils');
+	var FileTreeView = brackets.getModule('project/FileTreeView');
+	var FileUtils = brackets.getModule('file/FileUtils');
 
-	ExtensionUtils.loadStyleSheet(module, "styles/style.css");
+	ExtensionUtils.loadStyleSheet(module, 'styles/style.css');
 
 	var provider = function (entry) {
-		if (!entry.isFile) {
-			return;
-		}
+		if (!entry.isFile) return;
 
 		var ext = FileUtils.getSmartFileExtension(entry.fullPath) || entry.name.substr(1);
+		
+		var data = null;
+		
 		if (fileInfo.hasOwnProperty(ext)) {
 			data = fileInfo[ext];
 		} else {
-			data = fileInfo['txt'];
+			data = fileInfo.txt;
 		}
 		var $new = $('<ins>');
 		$new.text(data.icon);
