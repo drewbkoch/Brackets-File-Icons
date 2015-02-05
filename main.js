@@ -55,7 +55,7 @@ define(function (require, exports, module) {
 	// JavaScript
 	addIcon('js', '\ue097', '#f4bf75');
 	addIcon('ejs', '\uf05f', '#f4bf75');
-	addIcon('ts', '\uf05f', '#0074c1');
+	addIcon('ts', '\uf05f', '#228ed6');
 	addIcon('coffee', '\ue0b3', '#c9905e');
 	addIcon('json', '\uf096', '#F4BF75');
 	addIcon('ls', '\uf269', '#369bd7');
@@ -67,6 +67,18 @@ define(function (require, exports, module) {
 	// Java
 	addIcon('java', '\ue098', '#75b4de');
 	addAlias('class', 'java');
+  
+    // Ruby
+    addIcon('rb', '\ue091', '#ba4a32', 15);
+    addAlias('erb',   'rb');
+	addAlias('rdoc',  'rb');
+
+  
+    // Python
+    addIcon('py', '\ue09e', '#75b4de');
+    addAlias('pyc',   'py');
+	addAlias('pyo',  'py');
+	addAlias('pyd',  'py');
 
 	// Shell and friends
 	addIcon('sh', '\ue0b7');
@@ -76,30 +88,31 @@ define(function (require, exports, module) {
 	// Templating
 	addIcon('jade', '\uf13b', '#01dfa5');
 	addIcon('dust', '\uf13b', '#b2270b');
+	addIcon('haml', '\uf13b', '#eaeae1');
 
 	// Images
-	addIcon('png', '\uf012', '#dbb1a9');
-	addIcon('jpg', '\uf012', '#dedfa3');
+	addIcon('png', '\uf147', '#dbb1a9');
+	addIcon('jpg', '\uf147', '#dedfa3');
 	addAlias('jpeg', 'jpg');
-	addIcon('tiff', '\uf012', '#ff4000');
-	addIcon('ico', '\uf012', '#b6d2d1');
-	addIcon('svg', '\uf012', '#c0c5eb');
+	addIcon('tiff', '\uf147', '#f88b66');
+	addIcon('ico', '\uf147', '#b6d2d1');
+	addIcon('svg', '\uf147', '#c0c5eb');
 
 	addIcon('gif', '\uf012', '#aaecc0');
 
 	// Videos
-	addIcon('mp4', '\uf094');
+	addIcon('mp4', '\uf24d');
 	addAlias('webm', 'mp4');
 	addAlias('ogg', 'mp4');
 
 	// Audio
-	addIcon('mp3', '\uf094');
+	addIcon('mp3', '\uf258');
 	addAlias('wav', 'mp3');
 
 	// Fonts
-	addIcon('ttf', '\uf094');
-	addIcon('eot', '\uf094');
-	addIcon('woff', '\uf094');
+	addIcon('ttf', '\uf241', '#fa5656');
+    addIcon('eot', '\uf241', '#fca82b');
+    addIcon('woff', '\uf241', '#fd9be5');
 
 	// Readme
 	addIcon('md', '\uf0c9', '#c36b35');
@@ -139,12 +152,13 @@ define(function (require, exports, module) {
 	addIcon('yml', '\uf011');
 	addIcon('ls', '\uf011');
 	addIcon('org', '\uf011');
+  
+    // Other Files
+    addIcon('map', '\uf203');
 
 
 	var WorkingSetView = brackets.getModule('project/WorkingSetView');
-	var ProjectManager = brackets.getModule('project/ProjectManager');
 	var ExtensionUtils = brackets.getModule("utils/ExtensionUtils");
-	var React = brackets.getModule("thirdparty/react");
 	var FileTreeView = brackets.getModule("project/FileTreeView");
 	var FileUtils = brackets.getModule("file/FileUtils");
 
@@ -156,8 +170,13 @@ define(function (require, exports, module) {
 			return;
 		}
 
-		var ext = FileUtils.getSmartFileExtension(entry.name);
-		data = fileInfo.hasOwnProperty(ext) ? fileInfo[ext] : getDefaultIcon(ext);
+		var ext = FileUtils.getSmartFileExtension(entry.fullPath) || entry.name.substr(1);
+		if (fileInfo.hasOwnProperty(ext)) {
+			data = fileInfo[ext];
+		} else {
+			data = fileInfo['txt'];
+		}
+      
 		var $new = $('<ins>');
 		$new.text(data.icon);
 		$new.addClass('jstree-icon file-icon');
@@ -167,31 +186,6 @@ define(function (require, exports, module) {
 		});
 		return $new;
 	};
-
-	function renderWorkingSet() {
-		$('#open-files-container li>a>.file-icon').remove();
-
-		var $items = $('#open-files-container li>a');
-
-		$items.each(function (index) {
-			var ext = ($(this).find('.extension').text() || $(this).text() || '').substr(1).toLowerCase();
-			var lastIndex = ext.lastIndexOf('.');
-			if (lastIndex > 0) {
-				ext = ext.substr(lastIndex + 1);
-			}
-
-			var data = fileInfo.hasOwnProperty(ext) ? fileInfo[ext] : getDefaultIcon(ext);
-
-			var $new = $('<div>');
-			$new.text(data.icon);
-			$new.addClass('file-icon');
-			$new.css({
-				color: data.color,
-				fontSize: (data.size || 16) + 'px'
-			});
-			$(this).prepend($new);
-		});
-	}
 	
 	FileTreeView.addIconProvider(provider);
 	WorkingSetView.addIconProvider(provider);

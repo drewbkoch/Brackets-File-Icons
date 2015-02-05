@@ -25,10 +25,11 @@ The following files are supported at the moment:
  - Java
  - CSS, SASS, Less, Stylus
  - Shell script, Batch, command
- - Jade, EJS, Dust
+ - Jade, EJS, Dust, Haml
  - TXT
  - Log
  - Markdown
+ - Map
  - PNG, JPG, JPEG, TIFF, ICO
  - GIF
  - MP4, WebM, OGG
@@ -40,6 +41,8 @@ The following files are supported at the moment:
  - YAML
  - Project, Jscsrc, Jshintrc, Csslintrc, Todo, Classpath
  - Zip, Rar, 7z, Tgz, Tar, Gz, Bzip
+ - ERB, RB, RDOC
+ - PY, PYC, PYO, PYD
 
 How to install
 --------------
