@@ -10,14 +10,6 @@ Screenshots
 Supported files
 ---------------
 
-7/27/14 - New files supported!
-
-- HTM
-- EJS
-- COMMAND
-- GitAttributes
-- ORG (editorconfig.org)
-
 The following files are supported at the moment:
 
  - JavaScript
@@ -25,14 +17,15 @@ The following files are supported at the moment:
  - TypeScript
  - CoffeeScript
  - LiveScript
- - HTML
+ - HTML, HTM
  - SVG
  - XML
+ - plist
  - PHP, SQL
  - Java
  - CSS, SASS, Less, Stylus
- - Shell script, Batch
- - Jade
+ - Shell script, Batch, command
+ - Jade, EJS, Dust
  - TXT
  - Log
  - Markdown
@@ -41,8 +34,8 @@ The following files are supported at the moment:
  - MP4, WebM, OGG
  - MP3, WAV
  - EOT, TTF, WOFF
- - GitIgnore, GitModules
- - NPMIgnore
+ - GitIgnore, GitModules, GitAttributes
+ - NPMIgnore, ORG (editorconfig.org)
  - HTAccess, HTPasswd, Conf
  - YAML
  - Project, Jscsrc, Jshintrc, Csslintrc, Todo, Classpath
