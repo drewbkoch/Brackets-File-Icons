@@ -54,7 +54,7 @@ define(function (require, exports, module) {
 	// JavaScript
 	addIcon('js', '\ue097', '#f4bf75');
 	addIcon('ejs', '\uf05f', '#f4bf75');
-	addIcon('ts', '\uf05f', '#0074c1');
+	addIcon('ts', '\uf05f', '#228ed6');
 	addIcon('coffee', '\ue0b3', '#c9905e');
 	addIcon('json', '\uf096', '#F4BF75');
 	addIcon('ls', '\uf269', '#369bd7');
@@ -68,10 +68,10 @@ define(function (require, exports, module) {
 	addAlias('class', 'java');
   
     // Ruby
-    addIcon('rb', '\ue091', '#a0422e', 16);
+    addIcon('rb', '\ue091', '#ba4a32', 15);
     addAlias('erb',   'rb');
 	addAlias('rdoc',  'rb');
-    addIcon('haml', '\uf24b', '#ff9900');
+
   
     // Python
     addIcon('py', '\ue09e', '#75b4de');
@@ -86,12 +86,13 @@ define(function (require, exports, module) {
 
 	// Templating
 	addIcon('jade', '\uf13b', '#01dfa5');
+	addIcon('haml', '\uf13b', '#eaeae1');
 
 	// Images
 	addIcon('png', '\uf147', '#dbb1a9');
 	addIcon('jpg', '\uf147', '#dedfa3');
 	addAlias('jpeg', 'jpg');
-	addIcon('tiff', '\uf147', '#ff4000');
+	addIcon('tiff', '\uf147', '#f88b66');
 	addIcon('ico', '\uf147', '#b6d2d1');
 	addIcon('svg', '\uf147', '#c0c5eb');
 
@@ -107,9 +108,9 @@ define(function (require, exports, module) {
 	addAlias('wav', 'mp3');
 
 	// Fonts
-	addIcon('ttf', '\uf241', '#ff0000');
-    addIcon('eot', '\uf241', '#ff9900');
-    addIcon('woff', '\uf241', '#ff33cc');
+	addIcon('ttf', '\uf241', '#fa5656');
+    addIcon('eot', '\uf241', '#fca82b');
+    addIcon('woff', '\uf241', '#fd9be5');
 
 	// Readme
 	addIcon('md', '\uf0c9', '#c36b35');
