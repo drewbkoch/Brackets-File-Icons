@@ -24,8 +24,8 @@ define(function (require, exports, module) {
   addIcon('css', '\uf13c', '#6a9fb5');
   addIcon('scss', '\uf13c', '#c6538c');
   addAlias('sass', 'scss');
-    addAlias('css.scss', 'scss');
-    addAlias('css.sass', 'scss');
+  addAlias('css.scss', 'scss');
+  addAlias('css.sass', 'scss');
   addIcon('less', '\uf13c', '#3b6bb2');
   addIcon('styl', '\uf13c', '#b3d107');
 
@@ -46,16 +46,16 @@ define(function (require, exports, module) {
   addIcon('java', '\ue098', '#75b4de');
   addAlias('class', 'java');
 
-    // Ruby
-    addIcon('rb', '\ue091', '#ba4a32', 15);
-    addAlias('erb',   'rb');
-    addAlias('html.erb', 'rb');
+  // Ruby
+  addIcon('rb', '\ue091', '#ba4a32', 15);
+  addAlias('erb',   'rb');
+  addAlias('html.erb', 'rb');
   addAlias('rdoc',  'rb');
 
 
-    // Python
-    addIcon('py', '\ue09e', '#75b4de');
-    addAlias('pyc',   'py');
+  // Python
+  addIcon('py', '\ue09e', '#75b4de');
+  addAlias('pyc',   'py');
   addAlias('pyo',  'py');
   addAlias('pyd',  'py');
 
@@ -90,8 +90,8 @@ define(function (require, exports, module) {
 
   // Fonts
   addIcon('ttf', '\uf241', '#fa5656');
-    addIcon('eot', '\uf241', '#fca82b');
-    addIcon('woff', '\uf241', '#fd9be5');
+  addIcon('eot', '\uf241', '#fca82b');
+  addIcon('woff', '\uf241', '#fd9be5');
 
   // Readme
   addIcon('md', '\uf0c9', '#c36b35');
@@ -132,8 +132,8 @@ define(function (require, exports, module) {
   addIcon('ls', '\uf011');
   addIcon('org', '\uf011');
 
-    // Other Files
-    addIcon('map', '\uf203');
+  // Other Files
+  addIcon('map', '\uf203');
 
 
   var WorkingSetView = brackets.getModule('project/WorkingSetView');
