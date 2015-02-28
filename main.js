@@ -25,6 +25,7 @@ define(function (require, exports, module) {
 	addIcon('scss', '\uf13c', '#c6538c');
 	addAlias('sass', 'scss');
 	addIcon('less', '\uf13c', '#3b6bb2');
+	addAlias('css.less', 'less');
 	addIcon('styl', '\uf13c', '#b3d107');
 
 	// JavaScript
