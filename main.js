@@ -42,16 +42,16 @@ define(function (require, exports, module) {
 	// Java
 	addIcon('java', '\ue098', '#75b4de');
 	addAlias('class', 'java');
-  
-    // Ruby
-    addIcon('rb', '\ue091', '#ba4a32', 15);
-    addAlias('erb',   'rb');
+
+	// Ruby
+	addIcon('rb', '\ue091', '#ba4a32', 15);
+	addAlias('erb',   'rb');
 	addAlias('rdoc',  'rb');
 
-  
-    // Python
-    addIcon('py', '\ue09e', '#75b4de');
-    addAlias('pyc',   'py');
+
+	// Python
+	addIcon('py', '\ue09e', '#75b4de');
+	addAlias('pyc',   'py');
 	addAlias('pyo',  'py');
 	addAlias('pyd',  'py');
 
@@ -86,8 +86,8 @@ define(function (require, exports, module) {
 
 	// Fonts
 	addIcon('ttf', '\uf241', '#fa5656');
-    addIcon('eot', '\uf241', '#fca82b');
-    addIcon('woff', '\uf241', '#fd9be5');
+	addIcon('eot', '\uf241', '#fca82b');
+	addIcon('woff', '\uf241', '#fd9be5');
 
 	// Readme
 	addIcon('md', '\uf0c9', '#c36b35');
@@ -127,31 +127,30 @@ define(function (require, exports, module) {
 	addIcon('yml', '\uf011');
 	addIcon('ls', '\uf011');
 	addIcon('org', '\uf011');
-  
-    // Other Files
-    addIcon('map', '\uf203');
+
+	// Other Files
+	addIcon('map', '\uf203');
 
 
 	var WorkingSetView = brackets.getModule('project/WorkingSetView');
 	var ExtensionUtils = brackets.getModule('utils/ExtensionUtils');
 	var FileTreeView = brackets.getModule('project/FileTreeView');
-	var FileUtils = brackets.getModule('file/FileUtils');
+	var LanguageManager = brackets.getModule('language/LanguageManager');
 
 	ExtensionUtils.loadStyleSheet(module, 'styles/style.css');
 
 	var provider = function (entry) {
 		if (!entry.isFile) return;
 
-		var ext = FileUtils.getSmartFileExtension(entry.fullPath) || entry.name.substr(1);
-		
+		var ext = LanguageManager.getCompoundFileExtension(entry.fullPath) || entry.name.substr(1);
 		var data = null;
-		
+
 		if (fileInfo.hasOwnProperty(ext)) {
 			data = fileInfo[ext];
 		} else {
 			data = fileInfo.txt;
 		}
-		
+
 		var $new = $('<ins>');
 		$new.text(data.icon);
 		$new.addClass('jstree-icon file-icon');
@@ -159,6 +158,7 @@ define(function (require, exports, module) {
 			color: data.color,
 			fontSize: (data.size || 16) + 'px'
 		});
+
 		return $new;
 	};
 
