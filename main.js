@@ -29,6 +29,7 @@ define(function (require, exports, module) {
 
 	// JavaScript
 	addIcon('js', '\ue097', '#f4bf75');
+	addAlias('config.js', 'js');
 	addIcon('ejs', '\uf05f', '#f4bf75');
 	addIcon('ts', '\uf05f', '#228ed6');
 	addIcon('coffee', '\ue0b3', '#c9905e');
