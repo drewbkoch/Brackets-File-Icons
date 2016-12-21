@@ -127,9 +127,9 @@ define(function (require, exports, module) {
 	addIcon('yml', '\uf011');
 	addIcon('ls', '\uf011');
 	addIcon('org', '\uf011');
-
-	// Other Files
-	addIcon('map', '\uf203');
+  
+    // Other Files
+    addIcon('map', '\uf203');
 
 
 	var WorkingSetView = brackets.getModule('project/WorkingSetView');
