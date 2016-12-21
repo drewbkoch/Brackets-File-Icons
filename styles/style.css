@@ -15,6 +15,10 @@
 	color: #94a3a7;
 	display: inline-block;
 }
+.jstree ins.file-icon {
+	margin-left: -24px;
+	background: none;
+}
 #working-set-list-container .file-icon {
 	padding-right: 2px;
 }
