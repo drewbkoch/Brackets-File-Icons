@@ -14,6 +14,9 @@ define(function (require, exports, module) {
 		fileInfo[extension] = fileInfo[other];
 	}
 
+	// Folder
+	addIcon('folder', '\uf139', '#ADB9BD', 20);
+
 	// XML
 	addIcon('xml', '\uf05f', '#ff6600');
 	addIcon('plist', '\uf05f', '#5883f9');
@@ -29,6 +32,7 @@ define(function (require, exports, module) {
 
 	// JavaScript
 	addIcon('js', '\ue097', '#f4bf75');
+	addAlias('config.js', 'js');
 	addIcon('ejs', '\uf05f', '#f4bf75');
 	addIcon('ts', '\uf05f', '#228ed6');
 	addIcon('coffee', '\ue0b3', '#c9905e');
@@ -42,16 +46,16 @@ define(function (require, exports, module) {
 	// Java
 	addIcon('java', '\ue098', '#75b4de');
 	addAlias('class', 'java');
-  
-    // Ruby
-    addIcon('rb', '\ue091', '#ba4a32', 15);
-    addAlias('erb',   'rb');
+
+	// Ruby
+	addIcon('rb', '\ue091', '#ba4a32', 15);
+	addAlias('erb',   'rb');
 	addAlias('rdoc',  'rb');
 
-  
-    // Python
-    addIcon('py', '\ue09e', '#75b4de');
-    addAlias('pyc',   'py');
+
+	// Python
+	addIcon('py', '\ue09e', '#75b4de');
+	addAlias('pyc',   'py');
 	addAlias('pyo',  'py');
 	addAlias('pyd',  'py');
 
@@ -86,8 +90,8 @@ define(function (require, exports, module) {
 
 	// Fonts
 	addIcon('ttf', '\uf241', '#fa5656');
-    addIcon('eot', '\uf241', '#fca82b');
-    addIcon('woff', '\uf241', '#fd9be5');
+	addIcon('eot', '\uf241', '#fca82b');
+	addIcon('woff', '\uf241', '#fd9be5');
 
 	// Readme
 	addIcon('md', '\uf0c9', '#c36b35');
@@ -127,9 +131,9 @@ define(function (require, exports, module) {
 	addIcon('yml', '\uf011');
 	addIcon('ls', '\uf011');
 	addIcon('org', '\uf011');
-  
-    // Other Files
-    addIcon('map', '\uf203');
+
+	// Other Files
+	addIcon('map', '\uf203');
 
 
 	var WorkingSetView = brackets.getModule('project/WorkingSetView');
@@ -140,25 +144,42 @@ define(function (require, exports, module) {
 	ExtensionUtils.loadStyleSheet(module, 'styles/style.css');
 
 	var provider = function (entry) {
-		if (!entry.isFile) return;
-
-		var ext = FileUtils.getSmartFileExtension(entry.fullPath) || entry.name.substr(1);
-		
 		var data = null;
-		
-		if (fileInfo.hasOwnProperty(ext)) {
-			data = fileInfo[ext];
+
+		if (!entry.isFile) {
+//			return;
+			data = fileInfo['folder'];
+			data.margin = {
+				right: '5px',
+				left: '-5px'
+			};
 		} else {
-			data = fileInfo.txt;
+			var ext = entry.fullPath.substring(entry.fullPath.lastIndexOf('.') + 1) || entry.name.substr(1);
+//			var ext = FileUtils.getSmartFileExtension(entry.fullPath) || entry.name.substr(1);
+			if (fileInfo.hasOwnProperty(ext)) {
+				data = fileInfo[ext];
+			} else {
+				data = fileInfo.txt;
+			}
 		}
-		
+
 		var $new = $('<ins>');
 		$new.text(data.icon);
-		$new.addClass('jstree-icon file-icon');
+//		$new.addClass('jstree-icon file-icon');
+		$new.addClass('file-icon');
 		$new.css({
 			color: data.color,
 			fontSize: (data.size || 16) + 'px'
 		});
+		//folder css
+		if (data.margin) {
+			$new.css({
+				top: '-2px',
+				position: 'relative',
+				marginLeft: data.margin.left,
+				marginRight: data.margin.right
+			});
+		}
 		return $new;
 	};
 
