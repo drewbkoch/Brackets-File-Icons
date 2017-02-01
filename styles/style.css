@@ -21,3 +21,6 @@
 #project-files-container a {
 	padding-left: 9px;
 }
+.jstree-icon.file-icon{
+    left: 18px !important;
+}
