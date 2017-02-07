@@ -22,5 +22,6 @@
 	padding-left: 9px;
 }
 .jstree-icon.file-icon{
-    left: 18px !important;
+    position: relative;
+    left: -5px !important;
 }
